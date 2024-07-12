@@ -1,0 +1,301 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #323232;
+    background-color: #FDF8F0;
+    font-family: "Expletus Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.section {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.121);
+    padding: 0.2rem 0;
+    position: fixed;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #323232;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+}
+
+section {
+    display: flex;
+    /* height: 100vh; */
+    width: 100%;
+    /* align-items: center;
+    justify-content: center;
+    padding-top: 120px;
+    flex-direction: row; */
+}
+
+/* .about-page {
+    background-image:url('background-image-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+} */
+#about{
+    /* background-image:url('background-image-bg.jpg'); */
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+#skills{
+    /* position: relative; */
+    background-image:url('background-image-skills.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    /* padding-top: 10%; */
+}
+
+#contact{
+    /* position: relative; */
+    background-image:url('background-image-con.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    width: 100%;
+    height: 100vh;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    /* background-color: #ffb7b74c; */
+}
+
+/* .about-content .my-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+} */
+
+.myimage {
+    max-width: 200px;
+    border-radius: 1rem;
+    filter: drop-shadow(8px 8px 12px #3c3c3c55);
+}
+
+/* .about-text {
+    flex: 2;
+    padding-left: 20px;
+    text-align: left;
+} */
+
+.about-content .my-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    animation: fade-in-left 1.50s ease-in; /* Apply fade-in-left animation */
+}
+
+.about-text {
+    flex: 2;
+    padding-left: 20px;
+    text-align: left;
+    animation: fade-in-up 1.50s ease-in; /* Apply fade-in-up animation */
+}
+
+
+@keyframes fade-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-icon img {
+    height: 50px;
+    width: 50px;
+}
+
+.skill-icon{
+    font-weight: 700;
+    background-color: #ffffff87;
+}
+
+.contact-page .main-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.note label {
+    margin: 5px 0 5px;
+    text-align: start;
+}
+
+.note input, .note textarea {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    /* border-radius: 5px; */
+    outline: none;
+    border: 1;
+    border-bottom: 1px solid #323232;
+
+}
+
+
+
+.note textarea {
+    resize: vertical;
+}
+
+.note .submit {
+    background-color: #323232;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.note .submit:hover {
+    background-color: #ff6600;
+}
+
+
+
+footer {
+    /* background-color: rgba(0, 0, 0, 0.121); */
+    color: #323232;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.8rem;
+    position: fixed;
+    /* position: relative;  */
+}
+
+footer p {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.footerlinks {
+    display: flex;
+    margin-right: 70px;
+}
+
+.footerlinks a {
+    color: #fff;
+    margin-left: 20px;
+    transition: all 0.50s ease-in;
+}
+
+.footerlinks a:hover {
+    transform: translateY(-20%);
+    transition: all 0.50s ease-in;
+}
+
+.footerlinks img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+h2{
+    border-bottom: 1px solid #323232;
+    
+}

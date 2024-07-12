@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey!</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="section about-page" id="about">
+        <div class="about-content">
+            <div class="my-image">
+                <img src="my-image.jpg" alt="my-image-gl" class="myimage"/>
+            </div>
+            <div class="about-text">
+                <h2>About</h2>
+                <p>Hello! I'm Dhivagar, a passionate front-end developer with a solid foundation in computer science from Vellore Institute of Technology (VIT). I specialize in web development technologies like HTML, CSS, JavaScript, React.js and I am adept at creating intuitive, user-friendly interfaces.</p>
+                <p>My academic journey includes a Bachelor's in Computer Science and a Master's in Computer Application, during which I worked on diverse projects such as a university management system, a surveillance rover with object recognition, and a face detection system using machine learning.</p>
+                <p>I thrive on challenges and continuously seek opportunities to learn and grow. Participating in competitions like Web-a-Thon and Code-a-Thon has sharpened my problem-solving skills and teamwork abilities. I am excited to connect with like-minded professionals and explore collaborative opportunities in web development and IoT applications.</p>
+                <p>Thank you for visiting my portfolio!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section skills-page" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-icon"><img src="js-logo.png" alt="JavaScript"/><br>JavaScript</div>
+            <div class="skill-icon"><img src="react-logo.png" alt="React.js"/><br>React.js</div>
+            <div class="skill-icon"><img src="html-logo.png" alt="HTML"/><br>HTML</div>
+            <div class="skill-icon"><img src="css-logo.png" alt="CSS"/><br>CSS</div>
+            <div class="skill-icon"><img src="firebase-logo.png" alt="Firebase"/><br>Firebase</div>
+            <div class="skill-icon"><img src="arduino-logo.png" alt="Arduino"/><br>Arduino</div>
+            <div class="skill-icon"><img src="vs-logo.png" alt="Visual Studio Code"/><br>Visual Studio Code</div>
+            <div class="skill-icon"><img src="cisco-logo.png" alt="CISCO"/><br>CISCO</div>
+        </div>
+    </section>
+    
+    <section class="section contact-page" id="contact">
+        <h2>Contact</h2>
+        <div class="main-card">
+            <form class="note">
+                <label for="UserName">Your Name</label>
+                <input class="username" placeholder="your name"/ id="username" required>
+                <label for="Email">E-mail</label>
+                <input type="email" placeholder="your e-mail" class="email"/ id="useremail" required>
+                <label for="Phno">Phone No</label>
+                <input type="text" placeholder="your phone number" class="phone-number"/ id="usernumber">
+                <label for="Msg">Message</label>
+                <textarea placeholder="Leave me a note...!" class="user-msg" id="usermsg"></textarea>
+                <input type="submit" class="submit" id="submit" />
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Dhivagar. All rights reserved.</p>
+        <div class="footerlinks">
+            <a href="https://github.com/DhivagarJr" target="_blank"><img src="github-logo.png" alt="github"/></a>
+            <a href="https://www.linkedin.com/in/dhivagar-p/" target="_blank"><img src="linkedin-logo.png" alt="linkedin"/></a>
+            <a href="https://www.instagram.com/dhivagar.__.jett/" target="_blank"><img src="instagram-logo.png" alt="instagram"/></a>
+        </div>
+    </footer>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+  import { getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyA3-UdZf7ypIrnA59iv0tyZC429EurHiBc",
+    authDomain: "myapp-folio.firebaseapp.com",
+    projectId: "myapp-folio",
+    storageBucket: "myapp-folio.appspot.com",
+    messagingSenderId: "36734527909",
+    appId: "1:36734527909:web:426aed8dce9e9df829204c"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+
+  //database services
+  const db = getDatabase(app);
+
+  document.getElementById("submit").addEventListener('click', function(e){
+    e.preventDefault();
+    set(ref(db, 'user/' + document.getElementById("username").value),
+    {
+        username: document.getElementById("username").value,
+        useremail: document.getElementById("useremail").value,
+        usernumber: document.getElementById("usernumber").value,
+        usermsg: document.getElementById("usermsg").value
+
+    });
+    alert("Message sent successfully..!😊🤍 ");
+  })
+    </script>
+
+
+</body>
+</html>
